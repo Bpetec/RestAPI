@@ -16,6 +16,7 @@ class Car {
                 model: { type: String, maxlength: 24 },
                 year: { type: Number, maxlength: 4 },
                 mileage: { type: String, maxlength: 24 },
+                color: { type: String, maxlength: 24 },
                 user_id: {
                     type: Number,
                     key: 'foreign',
@@ -35,9 +36,48 @@ class Car {
                     method: 'POST',
                     callback: this.getCarById,
                     requireToken: true,
+                },
+                {
+                    route: '/create-car',
+                    method: 'POST',
+                    callback: this.createCar,
+                    requireToken: true,
+                },
+                {
+                    route: '/update-car/id/:id',
+                    method: 'PUT',
+                    callback: this.updateCar,
+                    requireToken: true,
+                },
+                {
+                    route: '/delete/id/:id',
+                    method: 'DELETE',
+                    callback: this.deleteCar,
+                    requireToken: true,
                 }
             ]
         ];
+    }
+    createCar(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let carCtrl = model.controller;
+            let resp = yield carCtrl.insert(req, null, null);
+            res.json({ message: 'Success ', resp });
+        });
+    }
+    updateCar(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let carCtrl = model.controller;
+            let resp = yield carCtrl.update(req, null, null);
+            res.json({ message: 'Success ', resp });
+        });
+    }
+    deleteCar(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let carCtrl = model.controller;
+            let resp = yield carCtrl.remove(req, null, null);
+            res.json({ message: 'Success ', resp });
+        });
     }
     getAllCars(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
