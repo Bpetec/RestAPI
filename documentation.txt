@@ -1,0 +1,330 @@
+-- ROLL DOCUMENTATION --
+
+Description: Get all the rolls from the database
+Endpoint:http://localhost:3002/api/v1/roll/get-all-rolls
+Method: POST
+Params: none
+Request Payload: none
+Response: 
+    {
+        "id": 1,
+        "name": "Extraordinary Rendition",
+        "barrel": "Full Bore",
+        "ammo": "Extended Mag",
+        "perkOne": "Overflow",
+        "perkTwo": "Frenzy",
+        "user_id": 1,
+        "active": true,
+        "created_by": "bpete",
+        "updated_by": null,
+        "created_at": "2021-04-28T23:50:30.444Z",
+        "updated_at": "2021-04-28T23:50:30.444Z",
+        "deleted_at": null
+    },
+    {
+        "id": 2,
+        "name": "Bottom Dollar",
+        "barrel": "Full Bore",
+        "ammo": "Accurized Rounds",
+        "perkOne": "Surplus",
+        "perkTwo": "Rampage",
+        "user_id": 3,
+        "active": true,
+        "created_by": "bpete",
+        "updated_by": null,
+        "created_at": "2021-04-28T23:51:40.749Z",
+        "updated_at": "2021-04-28T23:51:40.749Z",
+        "deleted_at": null
+    }
+
+Description: Get roll by the id from the database
+Endpoint:http://localhost:3002/api/v1/roll/get-roll-by-id/:id
+Method: POST
+Params: id - roll id
+Request Payload: none
+Response: 
+    {
+        "id": 2,
+        "name": "Bottom Dollar",
+        "barrel": "Full Bore",
+        "ammo": "Accurized Rounds",
+        "perkOne": "Surplus",
+        "perkTwo": "Rampage",
+        "user_id": 3,
+        "active": true,
+        "created_by": "bpete",
+        "updated_by": null,
+        "created_at": "2021-04-28T23:51:40.749Z",
+        "updated_at": "2021-04-28T23:51:40.749Z",
+        "deleted_at": null
+    }
+
+Description: Create a roll
+Endpoint:http://localhost:3002/api/v1/roll/create-roll
+Method: POST
+Params: none
+Request Payload: 
+{
+    "id":"5",
+    "name": "Seventh Seraph Carbine",
+    "barrel": "Hammer-Forged",
+    "ammo": "Drop Mag",
+    "perkOne":"Surplus",
+    "perkTwo":"Thresh",
+    "user_id":"3"
+}
+Response: 
+{
+    "id":"5",
+    "name": "Seventh Seraph Carbine",
+    "barrel": "Hammer-Forged",
+    "ammo": "Drop Mag",
+    "perkOne":"Surplus",
+    "perkTwo":"Thresh",
+    "user_id":"3"
+}
+
+Description: Delete a roll by its id
+Endpoint:http://localhost:3002/api/v1/roll/delete/id/:id
+Method: DELETE
+Params: id - the rolls id
+Request Payload: none
+Response:
+{
+    "command": "DELETE",
+    "rowCount": 1,
+    "oid": null,
+    "rows": [],
+    "fields": [],
+    "_parsers": [],
+    "RowCtor": null,
+    "rowAsArray": false
+}
+
+Description: Update a roll by its id
+Endpoint:http://localhost:3002/api/v1/roll/update-roll/id/:id
+Method: PUT
+Params: id - the rolls id
+Request Payload:
+{
+    "ammo":"Drop Mag"
+}
+Response:
+{
+    "id": 23,
+    "name": "Friction Fire",
+    "barrel": "Hammer Forged",
+    "ammo": "Drop Mag",
+    "perkOne": "Rampage",
+    "perkTwo": "Zen Moment",
+    "user_id": null,
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": "bpete",
+    "created_at": "2021-04-29T00:48:29.543Z",
+    "updated_at": "2021-05-02T22:57:56.582Z",
+    "deleted_at": null
+}
+
+-- WEAPON DOCUMENTATION --
+
+Description: Get all the weapons from the database
+Endpoint:http://localhost:3002/api/v1/weapon/get-all-weapons
+Method: POST
+Params: none
+Request Payload: none
+Response:
+{
+    "id": 1,
+    "weaponName": "Friction Fire",
+    "weaponType": "SMG",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-04-29T02:08:10.690Z",
+    "updated_at": "2021-04-29T02:08:10.690Z",
+    "deleted_at": null
+}
+
+Description: Get weapon by the id from the database
+Endpoint:http://localhost:3002/api/v1/weapon/get-weapon-by-id/:id
+Method: POST
+Params: id - the weapon id
+Request Payload: 
+{
+    "weaponName": "Friction Fire",
+    "weaponType": "SMG",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-04-29T02:08:10.690Z",
+    "updated_at": "2021-04-29T02:08:10.690Z",
+    "deleted_at": null
+}
+Response: 
+{
+    "id": 1,
+    "weaponName": "Friction Fire",
+    "weaponType": "SMG",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-04-29T02:08:10.690Z",
+    "updated_at": "2021-04-29T02:08:10.690Z",
+    "deleted_at": null
+}
+
+Description: Create a weapon
+Endpoint:http://localhost:3002/api/v1/weapon/create-weapon
+Method: POST
+Params: none
+Request Payload: 
+{
+    "id":"2",
+    "weaponName":"Seventh Seraph Carbine",
+    "weaponType":"Assault Rifle"
+}
+Response:
+{
+    "id": 2,
+    "weaponName": "Seventh Seraph Carbine",
+    "weaponType": "Assault Rifle",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-05-02T23:07:00.811Z",
+    "updated_at": "2021-05-02T23:07:00.811Z",
+    "deleted_at": null
+}
+
+Description: Delete a weapon by its id
+Endpoint:http://localhost:3002/api/v1/weapon/delete/id/:id
+Method: DELETE
+Params: id - the rolls id
+Request Payload: none
+Response:
+{
+    "command": "DELETE",
+    "rowCount": 1,
+    "oid": null,
+    "rows": [],
+    "fields": [],
+    "_parsers": [],
+    "RowCtor": null,
+    "rowAsArray": false
+}
+
+Description: Update a roll by its id
+Endpoint:http://localhost:3002/api/v1/weapon/update-weapon/id/:id
+Method: PUT
+Params: id - the rolls id
+Request Payload:
+{
+    "weaponName":"Seventh Seraph SMG"
+}
+Response:
+{
+    "id": 1,
+    "weaponName": "Seventh Seraph SMG",
+    "weaponType": "SMG",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": "bpete",
+    "created_at": "2021-04-29T02:08:10.690Z",
+    "updated_at": "2021-05-02T23:12:15.389Z",
+    "deleted_at": null
+}
+
+-- AMMO DOCUMENTATION --
+
+Description: Get all the ammos from the database
+Endpoint:http://localhost:3002/api/v1/ammo/get-all-ammos
+Method: POST
+Params: none
+Request Payload: none
+Response: 
+{
+    "id": 1,
+    "ammoName": "Accurized Rounds",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-05-02T22:15:18.789Z",
+    "updated_at": "2021-05-02T22:15:18.789Z",
+    "deleted_at": null
+}
+
+Description: Get ammo by the id from the database
+Endpoint:http://localhost:3002/api/v1/ammo/get-ammo-by-id/:id
+Method: POST
+Params: id - roll id
+Request Payload: none
+Response: 
+{
+    "id": 1,
+    "ammoName": "Accurized Rounds",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-05-02T22:15:18.789Z",
+    "updated_at": "2021-05-02T22:15:18.789Z",
+    "deleted_at": null
+}
+
+Description: Create an ammo
+Endpoint:http://localhost:3002/api/v1/ammo/create-ammo
+Method: POST
+Params: none
+Request Payload: 
+{
+    "id":"2",
+    "ammoName":"Drop Mag"
+}
+Response:
+{
+    "id": 2,
+    "ammoName": "Drop Mag",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": null,
+    "created_at": "2021-05-02T23:17:24.516Z",
+    "updated_at": "2021-05-02T23:17:24.516Z",
+    "deleted_at": null
+}
+
+Description: Delete a ammo by its id
+Endpoint:http://localhost:3002/api/v1/ammo/deleteAmmo/id/:id
+Method: DELETE
+Params: id - the ammos id
+Request Payload: none
+Response:
+{
+    "command": "DELETE",
+    "rowCount": 1,
+    "oid": null,
+    "rows": [],
+    "fields": [],
+    "_parsers": [],
+    "RowCtor": null,
+    "rowAsArray": false
+}
+
+Description: Update an ammo by its id
+Endpoint:http://localhost:3002/api/v1/ammo/update-ammo/id/:id
+Method: PUT
+Params: id - the ammos id
+Request Payload:
+{
+    "ammoName":"Drop Mag"
+}
+Response:
+{
+    "id": 1,
+    "ammoName": "Drop Mag",
+    "active": true,
+    "created_by": "bpete",
+    "updated_by": "bpete",
+    "created_at": "2021-05-02T22:15:18.789Z",
+    "updated_at": "2021-05-02T23:23:09.470Z",
+    "deleted_at": null
+}
