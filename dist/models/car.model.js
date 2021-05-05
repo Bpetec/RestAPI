@@ -17,6 +17,7 @@ class Car {
                 year: { type: Number, maxlength: 4 },
                 mileage: { type: String, maxlength: 24 },
                 color: { type: String, maxlength: 24 },
+                image_url: { type: String, maxlength: 1000 },
                 user_id: {
                     type: Number,
                     key: 'foreign',

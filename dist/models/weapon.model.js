@@ -12,8 +12,8 @@ class Weapon {
     constructor(norm) {
         this.model = [{
                 id: { type: Number, key: 'primary' },
-                weaponName: { type: String, maxlength: 24 },
-                weaponType: { type: String, maxlength: 24 },
+                weaponName: { type: String },
+                weaponType: { type: String, maxlength: 30 },
             }, 'A table to store weapon info', [
                 {
                     route: '/get-all-weapons',

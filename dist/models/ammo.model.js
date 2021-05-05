@@ -13,6 +13,7 @@ class Ammo {
         this.model = [{
                 id: { type: Number, key: 'primary' },
                 ammoName: { type: String },
+                ammoDescription: { type: String },
             }, 'A table to store ammo info', [
                 {
                     route: '/get-all-ammos',

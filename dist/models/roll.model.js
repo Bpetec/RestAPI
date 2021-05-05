@@ -12,7 +12,9 @@ class Roll {
     constructor(norm) {
         this.model = [{
                 id: { type: Number, key: 'primary' },
+                image_url: { type: String },
                 name: { type: String },
+                source: { type: String },
                 barrel: { type: String },
                 ammo: { type: String },
                 perkOne: { type: String },
